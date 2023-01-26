@@ -33,11 +33,10 @@ The solution was not much complicated. Still, I would like to mention out the be
 Although the solution works as per the requirements & there are few additional validations as well in place, this application can be further improved by below points which I was unable to do within the the short period of time.
 
 - The list of public holidays for Finland is now stored in a list variable of DateOnly type (Models > `PublicHolidaysFinland.cs`). In future if this application is used by other countries, it's easy to set up a separate country specific holidays in another list.
-- Right now, the other countries holiday lists could be initialized through `GetPublicHolidaysByCountry()` method inside `Planner.cs`. Although, this solution is ok for now, best way to achieve this is through `FACTORY` pattern.
+- Right now, the other countries holiday lists could be initialized through `GetPublicHolidaysByCountry()` method inside `Planner.cs`. Although, this solution is ok for now, best way to achieve this is through `FACTORY` pattern to make the application more `losely coupled`.
 - Validation is done through a common `Validators.cs` class now, which should be improved further by using country specific validation rules.
 - Same goes for Constants > `HolidayRules.cs` & `Messages.cs`.
-- I spent about 3 hours completing the task & tried my best to write methods in a such ways that unit testing could be easy.
-- I still further see the application can be made little more `losely coupled`.
+- I spent about 3 hours completing the task & tried my best to design the methods in a such ways that unit testing could be easy. Did not write unit test cases due to time constraints.
 - Country code `("1" - for FINLAND)` is right now used in the Program.cs > `ProcessHolidays()`, this can be taken as an input from the user to make the system dynamic to support other countries.
 
 
